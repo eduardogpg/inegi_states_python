@@ -10,7 +10,7 @@ states = { x + 1 : unique_states[x] for x in range(0, len(unique_states)) }
 
 for id, state in states.items():
     with open(sql_folder / 'states.sql', 'a') as file:
-        file.write(f"INSERT INTO states(id, name) VALUES('{id}', '{state}');\n")
+        file.write(f"INSERT INTO states(id, name, country_id) VALUES('{id}', '{state}', '1');\n")
         
         cities = df[df['NOM_ENT'] == state]['NOM_MUN'].unique()
 
